@@ -24,7 +24,7 @@ export const aboutData = [
     info: [
       {
         title: 'Web Development',
-        icons: ([
+        icons: [
           <FaHtml5 />,
           <FaCss3 />,
           <FaJs />,
@@ -32,7 +32,7 @@ export const aboutData = [
           <SiNextdotjs />,
           <SiFramer />,
           <FaWordpress />,
-        ]),
+        ],
       },
       {
         title: 'UI/UX Design',
@@ -186,7 +186,7 @@ const About = () => {
           {aboutData.map((item, itemIndex) => {
             return (
               <div
-                key={item.title} // key prop added
+                key={itemIndex} // key prop added
                 className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
                 onClick={() => setIndex(itemIndex)}
               >
@@ -204,8 +204,8 @@ const About = () => {
                 <div className="hidden md:flex">-</div>
                 <div>{item.stage}</div>
                 <div className="flex gap-x-4">
-                  {item.icons?.map((icon, _itemIndex) => {
-                    return <div className="text-2xl text-white">{icon}</div>
+                  {item.icons?.map((icon) => {
+                    return (<div key={icon.id} className="text-2xl text-white">{icon}</div>)
                   })}
                 </div>
               </div>
