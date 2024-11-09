@@ -50,7 +50,7 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/pagination'
 
-import {Pagination} from 'swiper' 
+import {Pagination} from 'swiper/modules' 
 
 import {BsArrowRight} from 'react-icons/bs'
 
@@ -62,7 +62,7 @@ const WorkSlider = () => {
       pagination={{
         clickable:true,
       }}
-      modules={{Pagination}}
+      modules={[Pagination]}
       className='h-[280px] sm:h-[480px]'
     >
      {workSlider.slides.map((slide, index)=> {

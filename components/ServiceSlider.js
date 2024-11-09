@@ -14,7 +14,7 @@ import {
   RxArrowTopRight,
 } from "react-icons/rx";
 
-import {FreeMode, Pagination} from 'swiper' 
+import {FreeMode, Pagination} from 'swiper/modules' 
 
 
 // service data
@@ -64,7 +64,7 @@ const ServiceSlider = () => {
       pagination={{
         clickable:true,
       }}
-      modules={{FreeMode, Pagination}}
+      modules={[FreeMode, Pagination]}
       className='h-[240px] sm:h-[340px]'
     >
      {serviceData.map((item, index)=> {
